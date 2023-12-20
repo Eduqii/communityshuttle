@@ -76,12 +76,12 @@ function codeverify() {
     const code = otp_form.otpcode.value;
     coderesult.confirm(code).then(function () {
         console.log('OTP Verified');
-        document.getElementsByClassName('alert-success')[0].style.display = 'block';
-        document.getElementsByClassName('alert-danger')[0].style.display = 'none';
+        document.getElementsByClassName('alert-success').style.display = 'block';
+        document.getElementsByClassName('alert-danger').style.display = 'none';
     }).catch(function () {
         console.log('OTP Not correct');
-        document.getElementsByClassName('alert-danger')[0].style.display = 'block';
-        document.getElementsByClassName('alert-success')[0].style.display = 'none';
+        document.getElementsByClassName('alert-danger').style.display = 'block';
+        document.getElementsByClassName('alert-success').style.display = 'none';
     })
 }
 
