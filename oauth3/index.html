@@ -12,20 +12,22 @@
 	<h3 class="content-heading">Getting started</h3>
 	<div class="alert alert-success">Number verified</div>
 	<div class="alert alert-danger">wrong OTP code.</div>
-	<form method="post">
-		<div class="form-group">
+	<form id="otp_form" method="post">
+		<div class="sender">
+			<div class="form-group">
 			<input type="tel" placeholder="OTP - Phone Number" name="phonenumber" class="form-control" value="+233" required>
-		</div>
-		<div id="recaptcha-container"></div>
-		<div class="btn-group">
-			<input type="button" class="btn btn-primary" value="Send">
+			</div>
+			<div id="recaptcha-container"></div>
+			<div class="btn-group">
+				<input type="button" class="btn btn-primary" value="Send" onclick="phoneAuth()">
+			</div>
 		</div>
 		<div id="verify-code" style="display: none;">
 			<div class="form-group verify-input">
-				<input type="number" placeholder="OTP code" class="form-control">
+				<input type="number" name="otpcode" placeholder="OTP code" class="form-control">
 			</div>
 			<div class="btn-group">
-				<input type="submit" class="btn btn-warning" value="Verify">
+				<input type="button" class="btn btn-warning" value="Verify" onclick="codeverify()">
 			</div>
 		</div><hr>
 		<div class="btn-group">
@@ -53,6 +55,37 @@ function render() {
 	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
 	recaptchaVerifier.render();
 }
+
+// function for send OTP
+function phoneAuth() {
+    const number = otp_form.phonenumber.value;
+    firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function (confirmationResult) {
+        window.confirmationResult = confirmationResult;
+        coderesult = confirmationResult;
+        document.getElementById('sender').style.display = 'none';
+        document.getElementById('verify-code').style.display = 'block';
+        console.log('OTP Sent');
+    }).catch(function (error) {
+        // error in sending OTP
+        alert("something went wrong, please try again later.");
+    });
+}
+
+// function for OTP verify
+function codeverify() {
+    const code = otp_form.otpcode.value;
+    coderesult.confirm(code).then(function () {
+        console.log('OTP Verified');
+        document.getElementsByClassName('alert-success')[0].style.display = 'block';
+        document.getElementsByClassName('alert-danger')[0].style.display = 'none';
+    }).catch(function () {
+        console.log('OTP Not correct');
+        document.getElementsByClassName('alert-danger')[0].style.display = 'block';
+        document.getElementsByClassName('alert-success')[0].style.display = 'none';
+    })
+}
+
+
 </script>
 </body>
 </html>
