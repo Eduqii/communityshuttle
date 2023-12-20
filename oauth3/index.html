@@ -67,7 +67,7 @@ function phoneAuth() {
         console.log('OTP Sent');
     }).catch(function (error) {
         // error in sending OTP
-        alert("something went wrong, please try again later.");
+        alert(error.message);
     });
 }
 
