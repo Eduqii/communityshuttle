@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Community Shuttle Ghana</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+	<h3 class="content-heading">Getting started</h3>
+		<div class="btn-group">
+			<input type="button" class="btn btn-primary" value="Sign-in with email" id="login">
+		</div>
+	</form>
+</div>
+<script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-auth-compat.js"></script>
+<script type="module">
+ // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-analytics.js";
+  import { getAuth ,GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.19.0/firebase-auth.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDLOShtx7O-RDOQcm5N6_MhTzuW9PfA2vw",
+  authDomain: "communityshuttleghana.firebaseapp.com",
+  databaseURL: "https://communityshuttleghana-default-rtdb.firebaseio.com",
+  projectId: "communityshuttleghana",
+  storageBucket: "communityshuttleghana.appspot.com",
+  messagingSenderId: "998152538997",
+  appId: "1:998152538997:web:dc2866eb5253de19e6e13c",
+  measurementId: "G-VDJLQN2E6G"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider(app);
+
+ login.addEventListener('click',(e) => {
+   // signInWithRedirect(auth, provider);
+
+
+   // redirect the result
+  //  getRedirectResult(auth)
+  //    .then((result) => {
+  //      // This gives you a Google Access Token. You can use it to access Google APIs.
+  //      const credential = GoogleAuthProvider.credentialFromResult(result);
+  //      const token = credential.accessToken;
+
+  //      // The signed-in user info.
+  //      const user = result.user;
+
+  //    }).catch((error) => {
+  //      // Handle Errors here.
+  //      const errorCode = error.code;
+  //      const errorMessage = error.message;
+  //      // The email of the user's account used.
+  //      const email = error.email;
+  //      // The AuthCredential type that was used.
+  //      const credential = GoogleAuthProvider.credentialFromError(error);
+  //      // ...
+       
+  // });
+
+
+// sign in with popup tab
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+
+
+    // alert(user.displayName);
+    // document.write(user.photoURL);
+    document.write("Welcome " + user.displayName);
+    document.write("<BR>");
+    document.write("Logged in as: " + user.email);
+    document.write("<BR>");
+    window.location.assign("https://eduqii.github.io/communityshuttle/oauth3/index.html");
+    // document.write("<p>Passcode: " + "<span style='color: green;'>G456123</span></p>");
+    // document.write("<BR>");
+    // document.writeln("<small>" + "Use the passcode to signin to get started." + "</small>");
+    // document.writeln("<pre>" + "There's no glory in practise. But without ");
+    // document.writeln("practice, there will be no glory." + "</pre>");
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+
+    alert(errorMessage);
+  });
+ });
+
+  signOut.addEventListener('click',(e) => {
+
+   signOut(auth).then(() => {
+    // Sign-out successful.
+   }).catch((error) => {
+    // An error happened.
+   });
+
+  });
+
+</script>
+</body>
+</html>
