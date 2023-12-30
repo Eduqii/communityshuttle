@@ -18,6 +18,9 @@
 	<div class="btn-group">
 		<input type="button" class="btn btn-primary email" value="Sign-in with email" id="login">
 	</div>
+	<div class="btn-group">
+		<input type="button" class="btn btn-info phonenumber" value="Verify phonenumber" href="<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html" style="visibility: none;">
+	</div>
 </div>
 <script type="module">
  // Import the functions you need from the SDKs you need
@@ -80,10 +83,12 @@ signInWithPopup(auth, provider)
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    document.querySelector(".heading").innerHTML = "Welcome" + user.displayName;
+    document.querySelector(".heading").innerHTML = "Welcome " + user.displayName;
     document.querySelector("p").innerHTML = "Logged in as: " + user.email;
-    document.querySelector(".email").innerHTML = "<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html' class='btn btn-info'> Verify phone number to continue </a>";
+    document.querySelector(".email").style.visibility = none;
+    document.querySelector(".phonenumber").style.visibility = visible;
     
+    //document.querySelector(".email").innerHTML = "' class='btn btn-info'> Verify phone number to continue </a>";
     // document.write(user.photoURL);
     // alert(user.displayName);  
     //document.write("Welcome " + user.displayName);
