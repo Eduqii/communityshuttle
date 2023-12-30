@@ -19,7 +19,7 @@
 		<input type="button" class="btn btn-primary email" value="Sign-in with email" id="login">
 	</div>
 	<div class="btn-group">
-		<input type="button" class="btn btn-info phonenumber" value="Verify phonenumber" href="<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html" style="visibility: none;">
+		<input type="button" class="btn btn-info phonenumber" value="Verify phonenumber" href="<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html" style="display: none;">
 	</div>
 </div>
 <script type="module">
@@ -85,8 +85,8 @@ signInWithPopup(auth, provider)
     const user = result.user;
     document.querySelector(".heading").innerHTML = "Welcome " + user.displayName;
     document.querySelector("p").innerHTML = "Logged in as: " + user.email;
-    document.querySelector(".email").style.visibility = none;
-    document.querySelector(".phonenumber").style.visibility = visible;
+    document.querySelector(".email").style.display = none;
+    document.querySelector(".phonenumber").style.display = block;
     
     //document.querySelector(".email").innerHTML = "' class='btn btn-info'> Verify phone number to continue </a>";
     // document.write(user.photoURL);
