@@ -15,10 +15,10 @@
 	<div class="content">
 		<p>Affordable fares for every trip</p>
 	</div>
-	<div class="btn-group email" style="display: block;">
+	<div class="btn-group email" style="visibility: visible;">
 		<input type="button" class="btn btn-primary" value="Sign-in with email" id="login">
 	</div>
-	<div class="btn-group phonenumber" style="display: none;">
+	<div class="btn-group phonenumber" style="visibility: hidden;">
 		<input type="button" class="btn btn-info" value="Verify phonenumber" href="<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html">
 	</div>
 </div>
@@ -85,8 +85,8 @@ signInWithPopup(auth, provider)
     const user = result.user;
     document.querySelector(".heading").innerHTML = "Welcome " + user.displayName;
     document.querySelector("p").innerHTML = "Logged in as: " + user.email;
-    document.querySelector(".email").style.display = none;
-    document.querySelector(".phonenumber").style.display = block;
+    document.querySelector(".email").style.visibility = hidden;
+    document.querySelector(".phonenumber").style.visibility = visible;
     
     //document.querySelector(".email").innerHTML = "' class='btn btn-info'> Verify phone number to continue </a>";
     // document.write(user.photoURL);
