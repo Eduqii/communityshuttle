@@ -11,9 +11,12 @@
 <div class="container">
 	<div class="content-heading">
 		<h3>Getting started</h3>
+	</div><hr>
+	<div class="content">
+		<p>Affordable fares for every trip</p>
 	</div>
 	<div class="btn-group">
-		<input type="button" class="btn btn-primary" value="Sign-in with email" id="login">
+		<input type="button" id="email" class="btn btn-primary" value="Sign-in with email" id="login">
 	</div>
 	</form>
 </div>
@@ -82,11 +85,14 @@ signInWithPopup(auth, provider)
 
     // alert(user.displayName);
     // document.write(user.photoURL);
-    document.write("Welcome " + user.displayName);
-    document.write("<BR>");
-    document.write("Logged in as: " + user.email);
-    document.write("<BR>");
-    document.writeln("<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html'> Verify phone number to continue </a>");
+	  document.querySelector('.content-heading').innerHTML = "Welcome" + user.displayName;
+    //document.write("Welcome " + user.displayName);
+    //document.write("<BR>");
+	  document.querySelector('p').innerHTML = "Logged in as: " + user.email;
+   // document.write("Logged in as: " + user.email);
+   // document.write("<BR>");
+	  document.querySelector('#email').innerHTML = "<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html' class='btn btn-info'> Verify phone number to continue </a>";
+   // document.writeln("<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html'> Verify phone number to continue </a>");
     // document.write("<p>Passcode: " + "<span style='color: green;'>G456123</span></p>");
     // document.write("<BR>");
     // document.writeln("<small>" + "Use the passcode to signin to get started." + "</small>");
