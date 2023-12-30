@@ -10,7 +10,7 @@
 <body>
 <div class="container">
 	<div class="content-heading">
-		<h3>Getting started</h3>
+		<h3 class="heading">Getting started</h3>
 	</div><hr>
 	<div class="content">
 		<p>Affordable fares for every trip</p>
@@ -81,17 +81,15 @@ signInWithPopup(auth, provider)
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-
-
-    // alert(user.displayName);
+	  document.querySelector(".heading").innerHTML = "Welcome" + user.displayName;
+	  document.querySelector("p").innerHTML = "Logged in as: " + user.email;
+	  document.querySelector("#email").innerHTML = "<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html' class='btn btn-info'> Verify phone number to continue </a>";
     // document.write(user.photoURL);
-	  document.querySelector('.content-heading').innerHTML = "Welcome" + user.displayName;
+    // alert(user.displayName);  
     //document.write("Welcome " + user.displayName);
     //document.write("<BR>");
-	  document.querySelector('p').innerHTML = "Logged in as: " + user.email;
    // document.write("Logged in as: " + user.email);
    // document.write("<BR>");
-	  document.querySelector('#email').innerHTML = "<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html' class='btn btn-info'> Verify phone number to continue </a>";
    // document.writeln("<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html'> Verify phone number to continue </a>");
     // document.write("<p>Passcode: " + "<span style='color: green;'>G456123</span></p>");
     // document.write("<BR>");
