@@ -80,9 +80,10 @@ signInWithPopup(auth, provider)
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-	  document.querySelector(".heading").innerHTML = "Welcome" + user.displayName;
-	  document.querySelector("p").innerHTML = "Logged in as: " + user.email;
-	  document.querySelector("#email").innerHTML = "<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html' class='btn btn-info'> Verify phone number to continue </a>";
+    document.querySelector(".heading").innerHTML = "Welcome" + user.displayName;
+    document.querySelector("p").innerHTML = "Logged in as: " + user.email;
+    document.querySelector("#email").innerHTML = "<a href='https://eduqii.github.io/communityshuttle/oauth3/index.html' class='btn btn-info'> Verify phone number to continue </a>";
+    
     // document.write(user.photoURL);
     // alert(user.displayName);  
     //document.write("Welcome " + user.displayName);
