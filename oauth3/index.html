@@ -79,7 +79,7 @@ function codeverify() {
         console.log('OTP Verified');
         document.getElementsByClassName('alert-success')[0].style.display = 'block';
         document.getElementsByClassName('alert-danger')[0].style.display = 'none';
-	window.location.assign("https://eduqii.github.io/communityshuttle/oauth3/auth.html");
+	const redurct_user = setTimeout(RedirectUserNow(), 10000);
     }).catch(function () {
         console.log('OTP Not correct');
         document.getElementsByClassName('alert-danger')[0].style.display = 'block';
@@ -87,6 +87,10 @@ function codeverify() {
     })
 }
 
+function RedirectUserNow(){
+    document.writeln("Processing, please wait...");
+    window.location.assign("https://eduqii.github.io/communityshuttle/oauth3/success.htm");
+}
 </script>
 </body>
 </html>
