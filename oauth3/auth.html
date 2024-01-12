@@ -3,14 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Community Shuttle Ghana</title>
+	<title>Axule Native</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <div class="container">
 	<div class="content-heading">
-		<h3 class="heading">CS GHANA</h3>
+		<h3 class="heading">Axule Native</h3>
 	</div><hr>
 	<div class="content">
 		<p>Affordable fares for every trip</p>
@@ -18,9 +18,9 @@
 	<div class="btn-group email" style="display: block;">
 		<input type="button" class="btn btn-primary" value="Signin" id="login">
 	</div>
-	<div class="btn-group phonenumber" style="display: none;">
+	<!--<div class="btn-group phonenumber" style="display: none;">
 		<a class="btn btn-info" href="https://eduqii.github.io/communityshuttle/oauth3/index.html">Verify phonenumber</a>
-	</div>
+	</div>-->
 </div>
 <script type="module">
  // Import the functions you need from the SDKs you need
@@ -86,7 +86,7 @@ signInWithPopup(auth, provider)
     document.querySelector(".heading").innerHTML = "Welcome " + user.displayName;
     document.querySelector("p").innerHTML = "Logged in as: " + user.email;
     document.querySelector(".email").style.display = "none";
-    document.querySelector(".phonenumber").style.display = "block";
+    // document.querySelector(".phonenumber").style.display = "block";
     
     //document.querySelector(".email").innerHTML = "' class='btn btn-info'> Verify phone number to continue </a>";
     // document.write(user.photoURL);
