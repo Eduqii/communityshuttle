@@ -49,44 +49,44 @@ const firebaseConfig = {
   const provider = new GoogleAuthProvider(app);
 
  login.addEventListener('click',(e) => {
-   signInWithRedirect(auth, provider);
+   // signInWithRedirect(auth, provider);
 
 
    // redirect the result
-   getRedirectResult(auth)
-     .then((result) => {
+   // getRedirectResult(auth)
+   //   .then((result) => {
        // This gives you a Google Access Token. You can use it to access Google APIs.
-       const credential = GoogleAuthProvider.credentialFromResult(result);
-       const token = credential.accessToken;
+       // const credential = GoogleAuthProvider.credentialFromResult(result);
+       // const token = credential.accessToken;
 
        // The signed-in user info.
-       const user = result.user;
+       // const user = result.user;
 
-     }).catch((error) => {
+     // }).catch((error) => {
        // Handle Errors here.
-       const errorCode = error.code;
-       const errorMessage = error.message;
+       // const errorCode = error.code;
+       // const errorMessage = error.message;
        // The email of the user's account used.
-       const email = error.email;
+       // const email = error.email;
        // The AuthCredential type that was used.
-       const credential = GoogleAuthProvider.credentialFromError(error);
+       // const credential = GoogleAuthProvider.credentialFromError(error);
        // ...
        
-  });
+  // });
 
 
 // sign in with popup tab
-// signInWithPopup(auth, provider)
-//   .then((result) => {
+signInWithPopup(auth, provider)
+  .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    // const credential = GoogleAuthProvider.credentialFromResult(result);
-    // const token = credential.accessToken;
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
     // The signed-in user info.
-    // const user = result.user;
-    // document.querySelector(".heading").innerHTML = "Welcome " + user.displayName;
-    // document.querySelector("p").innerHTML = "Logged in as: " + user.email;
-    // document.querySelector(".email").style.display = "none";
-    // document.querySelector(".phonenumber").style.display = "block";
+    const user = result.user;
+    document.querySelector(".heading").innerHTML = "Welcome " + user.displayName;
+    document.querySelector("p").innerHTML = "Logged in as: " + user.email;
+    document.querySelector(".email").style.display = "none";
+    document.querySelector(".phonenumber").style.display = "block";
     
     //document.querySelector(".email").innerHTML = "' class='btn btn-info'> Verify phone number to continue </a>";
     // document.write(user.photoURL);
@@ -102,19 +102,19 @@ const firebaseConfig = {
     // document.writeln("<pre>" + "There's no glory in practise. But without ");
     // document.writeln("practice, there will be no glory." + "</pre>");
     // ...
- //  }).catch((error) => {
- //    // Handle Errors here.
- //    const errorCode = error.code;
- //    const errorMessage = error.message.toString();
- //    // The email of the user's account used.
- //    const email = error.email;
- //    // The AuthCredential type that was used.
- //    const credential = GoogleAuthProvider.credentialFromError(error);
- //    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message.toString();
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
 
- //    alert(errorMessage);
- //  });
- // });
+    alert(errorMessage);
+  });
+ });
 
   signOut.addEventListener('click',(e) => {
 
