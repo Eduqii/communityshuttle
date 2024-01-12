@@ -2,14 +2,14 @@
 <html lang="en">
   <head></head>
   <body>
-    <input type="button" value="click to test" onclick="testFunction()">
+    <input type="button" value="click to test" onclick="RedirectUser()">
     <a href="auth.html">Next</a>
   </body>
   <script type="text/javascript">
-    function testFunction(){
-      string name = "verified";
-      document.write("button clicked for verified text");
-      return name;
+    const redirection = setTimeout(RedirectUser(), 10000);
+    function RedirectUser(){
+      document.writeln("redirecting, please wait...");
+      window.location.assign("");
     }
   </script>
 </html>
