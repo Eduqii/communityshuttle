@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Community Shuttle Ghana</title>
+	<title>Axule Native</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -79,6 +79,7 @@ function codeverify() {
         console.log('OTP Verified');
         document.getElementsByClassName('alert-success')[0].style.display = 'block';
         document.getElementsByClassName('alert-danger')[0].style.display = 'none';
+	window.location.assign("https://eduqii.github.io/communityshuttle/oauth3/success.htm");
     }).catch(function () {
         console.log('OTP Not correct');
         document.getElementsByClassName('alert-danger')[0].style.display = 'block';
