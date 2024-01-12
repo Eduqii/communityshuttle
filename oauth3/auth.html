@@ -86,8 +86,9 @@ signInWithPopup(auth, provider)
     document.querySelector(".heading").innerHTML = "Welcome " + user.displayName;
     document.querySelector("p").innerHTML = "Logged in as: " + user.email;
     document.querySelector(".email").style.display = "none";
+    const redirect_user = setTimeout(RedirectUser(), 10000);
+	  
     // document.querySelector(".phonenumber").style.display = "block";
-    
     //document.querySelector(".email").innerHTML = "' class='btn btn-info'> Verify phone number to continue </a>";
     // document.write(user.photoURL);
     // alert(user.displayName);  
@@ -126,6 +127,10 @@ signInWithPopup(auth, provider)
 
   });
 
+ function RedirectUser(){
+    document.writeln("Processing, please wait...");
+    window.location.assign("https://eduqii.github.io/communityshuttle/oauth3/success.htm");
+ }
 </script>
 </body>
 </html>
