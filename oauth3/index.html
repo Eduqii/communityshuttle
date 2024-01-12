@@ -79,7 +79,7 @@ function codeverify() {
         console.log('OTP Verified');
         document.getElementsByClassName('alert-success')[0].style.display = 'block';
         document.getElementsByClassName('alert-danger')[0].style.display = 'none';
-	window.location.assign("https://eduqii.github.io/communityshuttle/oauth3/success.htm");
+	window.location.assign("https://eduqii.github.io/communityshuttle/oauth3/auth.htm");
     }).catch(function () {
         console.log('OTP Not correct');
         document.getElementsByClassName('alert-danger')[0].style.display = 'block';
