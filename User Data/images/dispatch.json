@@ -1,14 +1,14 @@
 [
 {
   "UserId": "AxuleDis200Abx",
-  "ImageUrl": "images/noUser.jpg"
+  "ImageUrl": "noUser.jpg"
   "UserName": "Francis",
   "PhoneNumber": "",
   "Details": "",
 },
 {
    "UserId": "AxuleDis201Abx",
-   "ImageUrl": "images/noUser.jpg",
+   "ImageUrl": "noUser.jpg",
    "UserName": "Gabriel",
    "PhoneNumber": "",
    "Details": ""
