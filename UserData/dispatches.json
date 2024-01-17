@@ -2,15 +2,22 @@
   {
     "UserId": "Axule200BxN",
     "ImageUrl": "images/noUser.jpg",
+    "UserName": "Wounded Lion",
+    "PhoneNumber": "",
+    "Details": "VX Engine 2300, Royal Motors",
+  },
+  {
+    "UserId": "Axule200BxN",
+    "ImageUrl": "images/noUser.jpg",
     "UserName": "Francis",
     "PhoneNumber": "",
-    "Details": "",
+    "Details": "VX Engine 2300, Royal Motors",
   },
   {
     "UserId": "Axule201BxN",
     "ImageUrl": "images/noUser.jpg",
     "UserName": "Gabriel",
     "PhoneNumber": "",
-    "Details": "",
+    "Details": "VX Engine 4500, Royal Motors",
   }
 ]
